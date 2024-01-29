@@ -16,9 +16,9 @@ export const createReviewAction = async (formData: FormData) => {
 
   // throw new Error("Oh no!");
 
-  createReview(review);
-  revalidatePath("/reviews");
-  redirect("/reviews");
+  // createReview(review);
+  // revalidatePath("/reviews");
+  // redirect("/reviews");
 
-  // return { sth: "error " };
+  return { validation: "error #1" };
 };

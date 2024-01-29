@@ -9,7 +9,7 @@ import { Textarea } from "@/ui/Textarea";
 export const FormInputs = () => {
   const { action, pending } = useFormStatus();
 
-  // console.log({ action });
+  // console.log(action, pending);
 
   return (
     <>
