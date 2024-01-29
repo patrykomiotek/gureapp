@@ -17,12 +17,32 @@ type RecordsResponse = {
   records: Review[];
 };
 
+// { records: [{ fields: { author, points, content } }]}
+
 export const fetchReviews = async (): Promise<RecordsResponse> => {
   noStore();
+  // uses url as a cache, ttl 3600
   return fetch(`${BASE_URL}/reviews`, {
     headers: {
       Authorization: `Bearer ${TOKEN}`,
       "Content-type": "application/json",
+      // cache: "no-store",
+      // revalidate: 0,
     },
+  }).then((response) => response.json());
+};
+
+export const createReview = async (
+  data: Omit<Review["fields"], "created_at">
+) => {
+  return fetch(`${BASE_URL}/reviews`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${TOKEN}`,
+      "Content-type": "application/json",
+      // cache: "no-store",
+      // revalidate: 0,
+    },
+    body: JSON.stringify({ records: [{ fields: data }] }),
   }).then((response) => response.json());
 };

@@ -3,5 +3,5 @@ type Props = {
 };
 
 export const Header = ({ children }: Props) => {
-  return <h1>{children}</h1>;
+  return <h1 className="text-2xl font-semibold">{children}</h1>;
 };
