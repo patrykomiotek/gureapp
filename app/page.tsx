@@ -17,6 +17,7 @@ export default function Page() {
           height={760}
           alt="Desktop image"
           className="hidden sm:block"
+          priority={true}
         />
         <Image
           src={heroMobile}
@@ -24,6 +25,7 @@ export default function Page() {
           height={760}
           alt="Mobile image"
           className="visible sm:hidden"
+          priority={true}
         />
       </div>
     </main>
