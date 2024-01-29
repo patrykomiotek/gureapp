@@ -10,7 +10,6 @@ import {
   createReviewSchema,
 } from "@/services/reviews";
 import { ZodError } from "zod";
-import { NextResponse } from "next/server";
 
 export const createReviewAction = async (formData: FormData) => {
   console.log("Hello from console log", formData);
@@ -34,7 +33,7 @@ export const createReviewClientAction = async (formData: CreateReviewDto) => {
   console.log("Hello from console log", formData);
 
   try {
-    const result = createReviewSchema.parse(formData); // throw an exception, safePars
+    const result = createReviewSchema.parse(formData); // throw an exception, safeParse don't
     console.log(result);
 
     // throw new Error("Oh no!");
