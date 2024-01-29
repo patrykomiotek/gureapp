@@ -19,7 +19,7 @@ export default function CreateReview() {
 
   const handleFormSubmit = async (data: CreateReviewDto) => {
     const response = await createReviewClientAction(data);
-    console.log(JSON.parse(response!));
+    console.log(response);
   };
 
   return (

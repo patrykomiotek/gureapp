@@ -48,7 +48,11 @@ export const createReviewClientAction = async (formData: CreateReviewDto) => {
       // log
       // console.log("zod error?", error.message);
       // return JSON.stringify(error.message); // NextResponse
-      return JSON.stringify({ validation: "one two three" }); // NextResponse
+      // throw new Error("test");
+      // return JSON.stringify({ validation: "one two three" }); // NextResponse
+      return {
+        errors: error.flatten().fieldErrors,
+      };
     }
   }
 };
