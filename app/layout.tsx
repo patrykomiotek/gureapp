@@ -11,7 +11,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <NavBar />
+        <div className="container">
+          <NavBar />
+        </div>
         <div className="container">{children}</div>
       </body>
     </html>

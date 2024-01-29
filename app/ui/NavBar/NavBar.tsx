@@ -1,8 +1,9 @@
+import { lusitana } from "../fonts";
 import { NavLink } from "../NavLink/NavLink";
 
 export const NavBar = () => {
   return (
-    <nav className="container">
+    <nav className={`container ${lusitana.className}`}>
       <ul className="flex">
         <li className="mr-4">
           <NavLink href="/">Home</NavLink>
