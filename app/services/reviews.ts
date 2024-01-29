@@ -1,3 +1,5 @@
+import { unstable_noStore as noStore } from "next/cache";
+
 const BASE_URL = "https://api.airtable.com/v0/appRbMdcioCPUAEG6";
 const TOKEN = process.env.NEXT_PUBLIC_AIRTABLE_TOKEN;
 
@@ -16,6 +18,7 @@ type RecordsResponse = {
 };
 
 export const fetchReviews = async (): Promise<RecordsResponse> => {
+  noStore();
   return fetch(`${BASE_URL}/reviews`, {
     headers: {
       Authorization: `Bearer ${TOKEN}`,
