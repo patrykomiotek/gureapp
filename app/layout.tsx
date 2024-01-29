@@ -1,3 +1,4 @@
+import { NavBar } from "./ui/NavBar/NavBar";
 import { inter } from "./ui/fonts";
 
 import "./ui/global.css";
@@ -9,7 +10,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        <NavBar />
+        <div className="container">{children}</div>
+      </body>
     </html>
   );
 }

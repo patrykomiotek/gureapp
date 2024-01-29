@@ -1,4 +1,5 @@
 import { Button } from "./ui/Button";
+import { NavBar } from "./ui/NavBar/NavBar";
 
 export default function Page() {
   return (
