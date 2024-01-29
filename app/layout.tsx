@@ -11,10 +11,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <div className="container">
-          <NavBar />
+        <div className="mx-auto bg-slate-900 py-2">
+          <div className="container mx-auto">
+            <NavBar />
+          </div>
         </div>
-        <div className="container">{children}</div>
+        <div className="mx-auto py-2">
+          <div className="container mx-auto">{children}</div>
+        </div>
       </body>
     </html>
   );
