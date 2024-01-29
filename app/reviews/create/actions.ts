@@ -14,8 +14,11 @@ export const createReviewAction = async (formData: FormData) => {
     points: Number(formData.get("points")) || 0,
   };
 
-  createReview(review);
+  // throw new Error("Oh no!");
 
+  createReview(review);
   revalidatePath("/reviews");
   redirect("/reviews");
+
+  // return { sth: "error " };
 };
