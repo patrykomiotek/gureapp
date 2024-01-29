@@ -1,7 +1,22 @@
 import { unstable_noStore as noStore } from "next/cache";
+import { z } from "zod";
 
 const BASE_URL = "https://api.airtable.com/v0/appRbMdcioCPUAEG6";
 const TOKEN = process.env.NEXT_PUBLIC_AIRTABLE_TOKEN;
+
+export const createReviewSchema = z.object({
+  author: z.string().min(1, "Author is required"),
+  content: z
+    .string()
+    .min(5, "Content should have at least 5 characters")
+    .or(z.literal("")),
+  points: z
+    .number()
+    .min(1, "Points should at least 1")
+    .max(5, "Points should be max 5"),
+});
+
+export type CreateReviewDto = z.infer<typeof createReviewSchema>;
 
 export type Review = {
   id: string;
@@ -12,6 +27,8 @@ export type Review = {
     created_at: string;
   };
 };
+
+// export type CreateReviewDto = Omit<Review["fields"], "created_at">;
 
 type RecordsResponse = {
   records: Review[];
@@ -32,9 +49,7 @@ export const fetchReviews = async (): Promise<RecordsResponse> => {
   }).then((response) => response.json());
 };
 
-export const createReview = async (
-  data: Omit<Review["fields"], "created_at">
-) => {
+export const createReview = async (data: CreateReviewDto) => {
   return fetch(`${BASE_URL}/reviews`, {
     method: "POST",
     headers: {
