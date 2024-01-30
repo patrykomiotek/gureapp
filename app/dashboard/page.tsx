@@ -2,13 +2,13 @@ import { JobOffer } from "@prisma/client";
 import db from "../../prisma/db";
 
 export default function Page() {
-  const jobOffer: JobOffer = {
-    title: "Abc",
-    description: "lorem ipsum",
-    employer: "intel",
-    position: "Frontend developer",
-    salary: 10000,
-  };
+  // const jobOffer: JobOffer = {
+  //   title: "Abc",
+  //   description: "lorem ipsum",
+  //   employer: "intel",
+  //   position: "Frontend developer",
+  //   salary: 10000,
+  // };
 
   // await db.jobOffer.create({
   //   data: jobOffer
