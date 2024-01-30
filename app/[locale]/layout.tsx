@@ -11,10 +11,10 @@ type Props = {
 };
 
 // TODO: not use if not needed
-// const locales = ['en', 'de'];
+// const locales = ["en", "pl", "es"];
 
 // export function generateStaticParams() {
-//   return locales.map((locale) => ({locale}));
+//   return locales.map((locale) => ({ locale }));
 // }
 
 export default function RootLayout({ children, params: { locale } }: Props) {

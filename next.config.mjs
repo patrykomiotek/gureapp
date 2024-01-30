@@ -7,9 +7,14 @@ const nextConfig = {
   // output: "export",
   // distDir: "./dist",
 
+  // poweredByHeader: false,
+
   experimental: {
     // typedRoutes: true,
   },
+
+  // rewrites: /new-about -> /about
+  // redirect: /about -> /new-about
 };
 
 export default withNextIntl(nextConfig);
