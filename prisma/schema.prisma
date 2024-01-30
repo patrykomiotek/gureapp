@@ -48,3 +48,13 @@ model Revenue {
   month   String @unique @db.VarChar(4)
   revenue Float
 }
+
+model JobOffer {
+  id          Int    @id @default(autoincrement())
+  public_id   String @unique @default(uuid())
+  title       String
+  description String
+  position    String
+  salary      Float
+  employer    String
+}
