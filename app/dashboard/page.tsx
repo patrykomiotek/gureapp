@@ -14,6 +14,8 @@ export default function Page() {
   //   data: jobOffer
   // });
 
+  // await db.jobOffer.findMany();
+
   return (
     <main className="container p-6">
       <h1>Dashboard page</h1>

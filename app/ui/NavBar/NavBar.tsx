@@ -9,6 +9,9 @@ export const NavBar = () => {
           <NavLink href="/">Home</NavLink>
         </li>
         <li className="mr-4">
+          <NavLink href="/job-offers">Job offers</NavLink>
+        </li>
+        <li className="mr-4">
           <NavLink href="/reviews">Reviews</NavLink>
         </li>
         <li className="mr-4">
