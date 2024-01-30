@@ -1,4 +1,4 @@
-import { Header } from "./ui/Header";
+import { Header } from "../ui/Header";
 
 export default function NotFound() {
   return (

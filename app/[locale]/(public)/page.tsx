@@ -1,14 +1,19 @@
+// import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
-import { Button } from "../ui/Button";
-import { NavBar } from "../ui/NavBar/NavBar";
-import heroDesktop from "../../public/hero-desktop.png";
-import heroMobile from "../../public/hero-mobile.png";
+import { Button } from "../../ui/Button";
+import { NavBar } from "../../ui/NavBar/NavBar";
+import heroDesktop from "../../../public/hero-desktop.png";
+import heroMobile from "../../../public/hero-mobile.png";
 
-export default function Page() {
+export default async function Page() {
+  // const t = useTranslations("header");
+  const t = await getTranslations("header");
+
   return (
     <main className="container p-6">
-      <h1>Home page</h1>
+      <h1>Home page {t("title")}</h1>
       <Button label="Click me" />
       <div className="mt-4">
         <Image
