@@ -8,7 +8,7 @@ const nextConfig = {
   // distDir: "./dist",
 
   experimental: {
-    typedRoutes: true,
+    // typedRoutes: true,
   },
 };
 

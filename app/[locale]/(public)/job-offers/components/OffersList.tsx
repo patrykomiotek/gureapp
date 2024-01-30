@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { fetchOffers } from "../service/offers";
+import { Route } from "next";
 
 export const OffersList = async () => {
   const offers = await fetchOffers();
