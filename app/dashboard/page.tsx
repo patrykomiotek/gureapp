@@ -1,4 +1,5 @@
 import { JobOffer } from "@prisma/client";
+import db from "../../prisma/db";
 
 export default function Page() {
   const jobOffer: JobOffer = {
@@ -8,6 +9,10 @@ export default function Page() {
     position: "Frontend developer",
     salary: 10000,
   };
+
+  // await db.jobOffer.create({
+  //   data: jobOffer
+  // });
 
   return (
     <main className="container p-6">
