@@ -19,7 +19,7 @@ export default function CreateJobOfferPage() {
     event.preventDefault();
 
     const data = new FormData();
-    data.set("title", "new job offer10");
+    data.set("title", "new job offer50");
     data.set("description", "lorem ipsum");
     data.set("position", "backend dev");
     data.set("employer", "apple");
@@ -28,8 +28,9 @@ export default function CreateJobOfferPage() {
     const result = await createJobOffer(data);
     console.log({ result });
     toast.success("Offer was created!"); // FIXME: small bug
+    // startTransition(() => router.refresh()); // invalidate cache for /job-offer/create
     startTransition(() => router.push("/job-offers"));
-    startTransition(() => router.refresh());
+    startTransition(() => router.refresh()); // invalidate cache for /job-offer
   };
 
   return (
