@@ -10,18 +10,18 @@ export default async function ReviewsPage() {
     <div>
       <Header>Reviews</Header>
       {/* <ReviewsList /> */}
-      <div>
+      <div className="flex">
         <Link
           href="/reviews/create"
-          className="bg-blue-700 text-white p-4 rounded-sm"
+          className=" bg-blue-700  text-white p-4 rounded-sm"
         >
           Create new review
         </Link>
       </div>
 
-      <div>
+      <div className="mt-2">
         {reviews?.map((review) => (
-          <p key={review.id}>
+          <p key={review.id} className="mb-4">
             {review.fields.content} {review.fields.points}{" "}
             {review.fields.author}
           </p>

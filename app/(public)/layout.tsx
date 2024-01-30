@@ -15,7 +15,7 @@ export default function PublicLayout({ children }: Props) {
         </div>
       </div>
       <div className="mx-auto py-2">
-        <div className="container mx-auto">{children}</div>
+        <div className="container mx-auto py-4">{children}</div>
       </div>
     </>
   );
