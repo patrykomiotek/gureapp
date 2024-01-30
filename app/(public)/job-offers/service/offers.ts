@@ -11,3 +11,7 @@ export const fetchOffers = async () => {
     },
   });
 };
+
+export const fetchOffersCount = async () => {
+  return await db.jobOffer.count();
+};
