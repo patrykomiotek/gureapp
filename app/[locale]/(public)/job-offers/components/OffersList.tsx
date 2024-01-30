@@ -12,7 +12,6 @@ export const OffersList = async ({ query }: Props) => {
 
   return (
     <>
-      <SearchForm />
       <div>
         {offers.map((offer) => (
           <div key={offer.public_id}>

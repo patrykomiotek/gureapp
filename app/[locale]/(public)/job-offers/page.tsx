@@ -5,6 +5,7 @@ import { OffersCount } from "./components/OffersCount";
 import { OffersList } from "./components/OffersList";
 import { Metadata } from "next";
 import { PlusIcon } from "@heroicons/react/24/outline";
+import { SearchForm } from "./components/SearchForm";
 
 export const metadata: Metadata = {
   title: "Job offers",
@@ -33,6 +34,8 @@ export default async function JobOffersPage({ searchParams }: Props) {
       <Suspense fallback={<p>Loading count...</p>}>
         <OffersCount />
       </Suspense>
+
+      <SearchForm />
 
       <Suspense key={query} fallback={<p>Loading offers...</p>}>
         <OffersList query={query} />
