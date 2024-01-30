@@ -8,7 +8,7 @@ import {
   CreateReviewDto,
   createReview,
   createReviewSchema,
-} from "@/services/reviews";
+} from "@services/reviews";
 import { ZodError } from "zod";
 
 export const createReviewAction = async (formData: FormData) => {

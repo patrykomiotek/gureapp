@@ -1,8 +1,8 @@
-import { Button } from "@/ui/Button";
-import { Header } from "@/ui/Header";
-import { Input } from "@/ui/Input";
-import { createJobOffer } from "./actions";
 import Link from "next/link";
+
+import { Button, Header, Input } from "@ui";
+
+import { createJobOffer } from "./actions";
 
 export default function CreateJobOfferPage() {
   return (

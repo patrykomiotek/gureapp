@@ -1,6 +1,6 @@
 import { unstable_noStore as noStore } from "next/cache";
 
-import db from "../../../../prisma/db";
+import db from "@connection/db";
 
 export const fetchOffers = async (query: string | null) => {
   const whereQuery = query

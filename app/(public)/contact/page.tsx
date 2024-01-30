@@ -1,4 +1,4 @@
-import { Header } from "@/ui/Header";
+import { Header } from "@ui";
 
 export default function ContactPage() {
   return (

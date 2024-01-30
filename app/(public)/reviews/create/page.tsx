@@ -3,13 +3,11 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { Header } from "@/ui/Header";
+import { Header, Input, Textarea, Button } from "@ui";
+import { CreateReviewDto, createReviewSchema } from "@services/reviews";
+
 import { createReviewAction, createReviewClientAction } from "./actions";
 import { FormInputs } from "./FormInputs";
-import { Input } from "@/ui/Input";
-import { Textarea } from "@/ui/Textarea";
-import { Button } from "@/ui/Button";
-import { CreateReviewDto, createReviewSchema } from "@/services/reviews";
 
 // TODO: move to separate file
 // "use client";

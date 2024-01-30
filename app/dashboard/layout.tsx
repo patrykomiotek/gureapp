@@ -1,6 +1,4 @@
-import { Toast } from "@/ui/Toast/Toast";
-import { NavBar } from "../ui/NavBar/NavBar";
-import { inter } from "../ui/fonts";
+import { inter, Toast, NavBar } from "@ui";
 
 import "../ui/global.css";
 

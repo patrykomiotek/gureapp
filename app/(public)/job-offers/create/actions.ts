@@ -1,9 +1,10 @@
 "use server";
 
-import { JobOffer } from "@prisma/client";
-import db from "../../../../prisma/db";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import { JobOffer } from "@prisma/client";
+
+import db from "@connection/db";
 
 type CreateJobOffer = Omit<JobOffer, "id" | "public_id">;
 

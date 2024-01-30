@@ -1,7 +1,8 @@
-import { Header } from "@/ui/Header";
-import { ReviewsList } from "./ReviewsList";
-import { fetchReviews } from "@/services/reviews";
 import Link from "next/link";
+
+import { fetchReviews } from "@services/reviews";
+import { Header } from "@ui";
+import { ReviewsList } from "./ReviewsList";
 
 export default async function ReviewsPage() {
   const { records: reviews } = await fetchReviews(); // data.records

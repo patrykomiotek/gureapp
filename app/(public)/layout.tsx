@@ -1,5 +1,4 @@
-import { Toast } from "@/ui/Toast/Toast";
-import { NavBar } from "../ui/NavBar/NavBar";
+import { Toast, NavBar } from "@ui";
 
 type Props = {
   children: React.ReactNode;

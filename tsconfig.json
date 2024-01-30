@@ -23,14 +23,20 @@
     ],
     "baseUrl": "./",
     "paths": {
-      "@/*": [
-        "./app/*"
-      ],
-      "@lib": [
+      // "@/*": [
+      //   "./app/*"
+      // ],
+      "@lib/*": [
         "./app/lib/*"
       ],
       "@ui": [
-        "./app/ui/*"
+        "./app/ui/"
+      ],
+      "@services/*": [
+        "./app/services/*"
+      ],
+      "@connection/*": [
+        "./prisma/*"
       ]
     }
   },

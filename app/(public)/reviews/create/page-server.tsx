@@ -1,8 +1,6 @@
-import { Header } from "@/ui/Header";
+import { Header, Input, Textarea, Button } from "@ui";
+
 import { createReviewAction } from "./actions";
-import { Input } from "@/ui/Input";
-import { Textarea } from "@/ui/Textarea";
-import { Button } from "@/ui/Button";
 
 export default function CreateReview() {
   return (

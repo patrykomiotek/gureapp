@@ -1,7 +1,9 @@
-import { notFound } from "next/navigation";
-import { fetchOffer } from "../service/offers";
-import { Header } from "@/ui/Header";
 import { Metadata, ResolvingMetadata } from "next";
+import { notFound } from "next/navigation";
+
+import { Header } from "@ui";
+
+import { fetchOffer } from "../service/offers";
 
 type Params = {
   params: {

@@ -1,6 +1,7 @@
-import Link from "next/link";
-import { fetchOffers } from "../service/offers";
 import { Route } from "next";
+import Link from "next/link";
+
+import { fetchOffers } from "../service/offers";
 import { SearchForm } from "./SearchForm";
 
 type Props = {

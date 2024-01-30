@@ -1,5 +1,5 @@
 import { JobOffer } from "@prisma/client";
-import db from "../../prisma/db";
+import db from "@connection/db";
 
 export default function Page() {
   // const jobOffer: JobOffer = {

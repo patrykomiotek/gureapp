@@ -1,7 +1,7 @@
 import { unstable_setRequestLocale as setRequestLocale } from "next-intl/server";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 
-import { inter } from "./ui/fonts";
+import { inter } from "@ui";
 
 import "./ui/global.css";
 

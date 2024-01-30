@@ -2,9 +2,7 @@
 
 import { useFormStatus } from "react-dom";
 
-import { Button } from "@/ui/Button";
-import { Input } from "@/ui/Input";
-import { Textarea } from "@/ui/Textarea";
+import { Button, Input, Textarea } from "@ui";
 
 export const FormInputs = () => {
   const { action, pending } = useFormStatus();

@@ -2,8 +2,7 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
-import { Button } from "../ui/Button";
-import { NavBar } from "../ui/NavBar/NavBar";
+import { Button, NavBar } from "@ui";
 import heroDesktop from "../../public/hero-desktop.png";
 import heroMobile from "../../public/hero-mobile.png";
 

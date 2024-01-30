@@ -99,6 +99,8 @@ const config: Config = {
   moduleNameMapper: {
     "^@lib/(.*)$": "<rootDir>/app/lib/$1",
     "^@ui/(.*)$": "<rootDir>/app/ui/$1",
+    "^@services/(.*)$": "<rootDir>/app/services/$1",
+    "^@connection/(.*)$": "<rootDir>/prisma/$1",
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

@@ -1,7 +1,7 @@
 "use client";
 
-import { Review, fetchReviews } from "@/services/reviews";
 import { useEffect, useState } from "react";
+import { Review, fetchReviews } from "@services/reviews";
 
 export const ReviewsList = () => {
   const [reviews, setReviews] = useState<Review[] | undefined>([]);
