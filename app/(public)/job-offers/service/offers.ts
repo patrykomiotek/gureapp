@@ -1,3 +1,5 @@
+import { unstable_noStore as noStore } from "next/cache";
+
 import db from "../../../../prisma/db";
 
 export const fetchOffers = async () => {
@@ -17,5 +19,6 @@ export const fetchOffersCount = async () => {
 };
 
 export const fetchOffer = async (publicId: string) => {
+  // noStore();
   return db.jobOffer.findUnique({ where: { public_id: publicId } });
 };
