@@ -3,6 +3,11 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { OffersCount } from "./components/OffersCount";
 import { OffersList } from "./components/OffersList";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Job offers",
+};
 
 export default async function JobOffersPage() {
   return (
