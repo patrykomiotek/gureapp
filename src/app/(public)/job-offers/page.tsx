@@ -5,6 +5,7 @@ import { PlusIcon } from "@heroicons/react/24/outline";
 import { unstable_setRequestLocale as setRequestLocale } from "next-intl/server";
 
 import { Header } from "@ui";
+
 import { OffersCount } from "./components/OffersCount";
 import { OffersList } from "./components/OffersList";
 import { SearchForm } from "./components/SearchForm";

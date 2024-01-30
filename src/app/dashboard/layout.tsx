@@ -1,6 +1,6 @@
 import { inter, Toast, NavBar } from "@ui";
 
-import "../ui/global.css";
+import "../../ui/global.css";
 
 export default function RootLayout({
   children,

@@ -3,7 +3,7 @@ import { NextIntlClientProvider, useMessages } from "next-intl";
 
 import { inter } from "@ui";
 
-import "./ui/global.css";
+import "../ui/global.css";
 
 type Props = {
   children: React.ReactNode;

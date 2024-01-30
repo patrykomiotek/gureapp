@@ -3,8 +3,8 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
 import { Button, NavBar } from "@ui";
-import heroDesktop from "../../public/hero-desktop.png";
-import heroMobile from "../../public/hero-mobile.png";
+import heroDesktop from "../../../public/hero-desktop.png";
+import heroMobile from "../../../public/hero-mobile.png";
 
 export default async function Page() {
   // const t = useTranslations("header");

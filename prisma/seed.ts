@@ -1,13 +1,13 @@
-import { User, Invoice, Customer, Revenue } from '@prisma/client';
-import bcrypt from 'bcrypt';
+import { User, Invoice, Customer, Revenue } from "@prisma/client";
+import bcrypt from "bcrypt";
 import {
   invoices,
   customers,
   revenue,
   users,
-} from '../app/lib/placeholder-data';
+} from "../src/lib/placeholder-data";
 
-import db from './db';
+import db from "./db";
 
 async function main() {
   await Promise.all(
@@ -21,7 +21,7 @@ async function main() {
           password: hashedPassword,
         },
       });
-    }),
+    })
   );
 
   await Promise.all(
@@ -33,8 +33,8 @@ async function main() {
           email: customer.email,
           image_url: customer.image_url,
         },
-      }),
-    ),
+      })
+    )
   );
 
   await Promise.all(
@@ -50,8 +50,8 @@ async function main() {
           status: invoice.status,
           // created_at: invoice.created_at,
         },
-      }),
-    ),
+      })
+    )
   );
 
   await Promise.all(
@@ -61,8 +61,8 @@ async function main() {
           month: rev.month,
           revenue: rev.revenue,
         },
-      }),
-    ),
+      })
+    )
   );
 }
 

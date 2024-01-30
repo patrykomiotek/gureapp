@@ -97,9 +97,9 @@ const config: Config = {
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    "^@lib/(.*)$": "<rootDir>/app/lib/$1",
-    "^@ui/(.*)$": "<rootDir>/app/ui/$1",
-    "^@services/(.*)$": "<rootDir>/app/services/$1",
+    "^@lib/(.*)$": "<rootDir>/src/app/lib/$1",
+    "^@ui/(.*)$": "<rootDir>/src/app/ui/$1",
+    "^@services/(.*)$": "<rootDir>/src/app/services/$1",
     "^@connection/(.*)$": "<rootDir>/prisma/$1",
   },
 

@@ -27,13 +27,13 @@
       //   "./app/*"
       // ],
       "@lib/*": [
-        "./app/lib/*"
+        "./src/lib/*"
       ],
       "@ui": [
-        "./app/ui/"
+        "./src/ui"
       ],
       "@services/*": [
-        "./app/services/*"
+        "./src/services/*"
       ],
       "@connection/*": [
         "./prisma/*"
