@@ -10,7 +10,17 @@ export const metadata: Metadata = {
   title: "Job offers",
 };
 
-export default async function JobOffersPage() {
+type Props = {
+  searchParams: {
+    query?: string;
+  };
+};
+
+export default async function JobOffersPage({ searchParams }: Props) {
+  // console.log({ searchParams });
+
+  const query = searchParams.query || null;
+
   return (
     <div>
       <Header>Job offers</Header>
@@ -24,8 +34,8 @@ export default async function JobOffersPage() {
         <OffersCount />
       </Suspense>
 
-      <Suspense fallback={<p>Loading offers...</p>}>
-        <OffersList />
+      <Suspense key={query} fallback={<p>Loading offers...</p>}>
+        <OffersList query={query} />
       </Suspense>
     </div>
   );

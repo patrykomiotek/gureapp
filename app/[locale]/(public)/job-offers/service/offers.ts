@@ -2,16 +2,33 @@ import { unstable_noStore as noStore } from "next/cache";
 
 import db from "../../../../../prisma/db";
 
-export const fetchOffers = async () => {
-  return db.jobOffer.findMany({
-    select: {
-      public_id: true,
-      title: true,
-      description: true,
-      position: true,
-      salary: true,
-    },
-  });
+export const fetchOffers = async (query: string | null) => {
+  if (query) {
+    return db.jobOffer.findMany({
+      select: {
+        public_id: true,
+        title: true,
+        description: true,
+        position: true,
+        salary: true,
+      },
+      where: {
+        title: {
+          contains: query,
+        },
+      },
+    });
+  } else {
+    return db.jobOffer.findMany({
+      select: {
+        public_id: true,
+        title: true,
+        description: true,
+        position: true,
+        salary: true,
+      },
+    });
+  }
 };
 
 export const fetchOffersCount = async () => {
