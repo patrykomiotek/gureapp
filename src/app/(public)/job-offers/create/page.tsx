@@ -12,30 +12,28 @@ import { createJobOffer } from "./actions";
 export default function CreateJobOfferPage() {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
-  const formRef = useRef<HTMLFormElement>(undefined);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (event: FormEvent) => {
     // event
     event.preventDefault();
 
-    // event.currentTarget.valu;
+    if (formRef.current) {
+      const data = new FormData(formRef.current);
+      // data.set("title", "new job offer50");
+      // data.set("description", "lorem ipsum");
+      // data.set("position", "backend dev");
+      // data.set("employer", "apple");
+      // data.set("salary", "54000");
 
-    const data = new FormData(formRef.current);
-    // data.set("title", "new job offer50");
-    // data.set("description", "lorem ipsum");
-    // data.set("position", "backend dev");
-    // data.set("employer", "apple");
-    // data.set("salary", "54000");
-
-    const formObject = Object.fromEntries(data.entries());
-
-    console.log({ data: data });
-    const result = await createJobOffer(data);
-    console.log({ result });
-    toast.success("Offer was created!");
-    // // startTransition(() => router.refresh()); // invalidate cache for /job-offer/create
-    startTransition(() => router.push("/job-offers"));
-    startTransition(() => router.refresh()); // invalidate cache for /job-offer
+      console.log({ data: data });
+      const result = await createJobOffer(data);
+      console.log({ result });
+      toast.success("Offer was created!");
+      // // startTransition(() => router.refresh()); // invalidate cache for /job-offer/create
+      startTransition(() => router.push("/job-offers"));
+      startTransition(() => router.refresh()); // invalidate cache for /job-offer
+    }
   };
 
   return (
