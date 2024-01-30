@@ -22,6 +22,9 @@ export const createJobOffer = async (formData: FormData) => {
   const offer = await db.jobOffer.create({ data: jobOffer });
   console.log({ offer });
 
-  revalidatePath("/job-offers");
-  redirect("/job-offers");
+  // TODO: belowe lines are for server only
+  // revalidatePath("/job-offers");
+  // redirect("/job-offers");
+
+  return { status: "ok" };
 };
