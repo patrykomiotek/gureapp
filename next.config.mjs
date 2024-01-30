@@ -17,4 +17,7 @@ const nextConfig = {
   // redirect: /about -> /new-about
 };
 
-export default withNextIntl(nextConfig);
+// with next-intl
+// export default withNextIntl(nextConfig);
+
+export default nextConfig;

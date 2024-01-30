@@ -45,7 +45,7 @@ export default function CreateJobOfferPage() {
         <Input name="employer" label="Employee" />
         <Button type="submit" label="submit" />
       </form>
-      <Link href="/en/job-offers">List of offers</Link>
+      <Link href="/job-offers">List of offers</Link>
     </div>
   );
 }

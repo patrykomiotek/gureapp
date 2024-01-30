@@ -1,3 +1,5 @@
+// to enable next-intl enable lines below
+/**
 import createMiddleware from "next-intl/middleware";
 
 export default createMiddleware({
@@ -12,3 +14,4 @@ export const config = {
   // Match only internationalized pathnames
   matcher: ["/", "/(pl|en|es)/:path*"],
 };
+ */

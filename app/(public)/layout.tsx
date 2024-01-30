@@ -1,5 +1,5 @@
 import { Toast } from "@/ui/Toast/Toast";
-import { NavBar } from "../../ui/NavBar/NavBar";
+import { NavBar } from "../ui/NavBar/NavBar";
 
 type Props = {
   children: React.ReactNode;

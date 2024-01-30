@@ -12,9 +12,9 @@ export const SearchForm = () => {
   const [isStarted, setTransition] = useTransition();
   const searchFieldRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    searchFieldRef.current?.focus();
-  }, []);
+  // useEffect(() => {
+  //   searchFieldRef.current?.focus();
+  // }, []);
 
   const handleChange: ChangeEventHandler<HTMLInputElement> =
     useDebouncedCallback((event) => {
@@ -43,7 +43,7 @@ export const SearchForm = () => {
           ref={searchFieldRef}
           label="Search"
           onChange={handleChange}
-          defaultValue={searchParams.get("query") || ""}
+          defaultValue={searchParams.get("query")?.toString()}
         />
       </form>
     </div>

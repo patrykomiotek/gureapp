@@ -1,10 +1,12 @@
-import { Header } from "@/ui/Header";
+import { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
+import { PlusIcon } from "@heroicons/react/24/outline";
+import { unstable_setRequestLocale as setRequestLocale } from "next-intl/server";
+
+import { Header } from "@/ui/Header";
 import { OffersCount } from "./components/OffersCount";
 import { OffersList } from "./components/OffersList";
-import { Metadata } from "next";
-import { PlusIcon } from "@heroicons/react/24/outline";
 import { SearchForm } from "./components/SearchForm";
 
 export const metadata: Metadata = {
@@ -12,13 +14,20 @@ export const metadata: Metadata = {
 };
 
 type Props = {
+  params?: {
+    locale: string;
+  };
   searchParams: {
     query?: string;
   };
 };
 
-export default async function JobOffersPage({ searchParams }: Props) {
+export default async function JobOffersPage({
+  // params: { locale },
+  searchParams,
+}: Props) {
   // console.log({ searchParams });
+  // setRequestLocale(locale);
 
   const query = searchParams.query || null;
 
