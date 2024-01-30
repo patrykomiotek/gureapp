@@ -1,25 +1,20 @@
 import { NavBar } from "../ui/NavBar/NavBar";
-import { inter } from "../ui/fonts";
 
-import "../ui/global.css";
-
-export default function RootLayout({
-  children,
-}: {
+type Props = {
   children: React.ReactNode;
-}) {
+};
+
+export default function PublicLayout({ children }: Props) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased`}>
-        <div className="mx-auto bg-slate-900 py-2">
-          <div className="container mx-auto">
-            <NavBar />
-          </div>
+    <>
+      <div className="mx-auto bg-slate-900 py-2">
+        <div className="container mx-auto">
+          <NavBar />
         </div>
-        <div className="mx-auto py-2">
-          <div className="container mx-auto">{children}</div>
-        </div>
-      </body>
-    </html>
+      </div>
+      <div className="mx-auto py-2">
+        <div className="container mx-auto">{children}</div>
+      </div>
+    </>
   );
 }
