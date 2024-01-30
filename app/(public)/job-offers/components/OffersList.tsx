@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { fetchOffers } from "../service/offers";
 
 export const OffersList = async () => {
@@ -9,7 +10,11 @@ export const OffersList = async () => {
         <div key={offer.public_id}>
           <div className="mb-2">
             <div>
-              <p className="font-semibold">{offer.title}</p>
+              <p className="font-semibold">
+                <Link href={`/job-offers/${offer.public_id}`}>
+                  {offer.title}
+                </Link>
+              </p>
             </div>
             <div>{offer.description}</div>
           </div>

@@ -15,3 +15,7 @@ export const fetchOffers = async () => {
 export const fetchOffersCount = async () => {
   return await db.jobOffer.count();
 };
+
+export const fetchOffer = async (publicId: string) => {
+  return db.jobOffer.findUnique({ where: { public_id: publicId } });
+};
