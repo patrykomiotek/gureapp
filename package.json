@@ -12,7 +12,8 @@
     "seed": "node --loader ts-node/esm --experimental-specifier-resolution=node ./prisma/seed.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "npx prisma generate"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.1",
