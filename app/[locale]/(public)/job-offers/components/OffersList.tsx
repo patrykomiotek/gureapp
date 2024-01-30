@@ -12,7 +12,7 @@ export const OffersList = async () => {
           <div className="mb-2">
             <div>
               <p className="font-semibold">
-                <Link href={`/job-offers/${offer.public_id}`}>
+                <Link href={`/en/job-offers/${offer.public_id}`}>
                   {offer.title}
                 </Link>
               </p>
