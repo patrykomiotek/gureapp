@@ -6,10 +6,11 @@ import { SearchForm } from "./SearchForm";
 
 type Props = {
   query: string | null;
+  city: string | null;
 };
 
-export const OffersList = async ({ query }: Props) => {
-  const offers = await fetchOffers(query);
+export const OffersList = async ({ query, city }: Props) => {
+  const offers = await fetchOffers(query, city);
 
   return (
     <>
@@ -19,12 +20,11 @@ export const OffersList = async ({ query }: Props) => {
             <div className="mb-2">
               <div>
                 <p className="font-semibold">
-                  <Link href={`/job-offers/${offer.public_id}`}>
-                    {offer.title}
-                  </Link>
+                  <Link href={`/offers/${offer.public_id}`}>{offer.title}</Link>
                 </p>
               </div>
               <div>{offer.description}</div>
+              <div>City: {offer.city}</div>
             </div>
           </div>
         ))}

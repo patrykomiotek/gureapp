@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 import { Header } from "@ui";
 
-import { fetchOffer } from "../service/offers";
+import { fetchOffer } from "../../job-offers/[[...city]]/service/offers";
 
 type Params = {
   params: {

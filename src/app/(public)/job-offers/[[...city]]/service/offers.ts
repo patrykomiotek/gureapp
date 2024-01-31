@@ -2,14 +2,23 @@ import { unstable_noStore as noStore } from "next/cache";
 
 import db from "@connection/db";
 
-export const fetchOffers = async (query: string | null) => {
-  const whereQuery = query
-    ? {
-        title: {
-          contains: query,
-        },
-      }
-    : {};
+export const fetchOffers = async (
+  query: string | null,
+  city: string | null
+) => {
+  const whereQuery = {
+    ...(query && {
+      title: {
+        contains: query,
+      },
+    }),
+    ...(city && {
+      city: {
+        contains: city,
+      },
+    }),
+  };
+
   return db.jobOffer.findMany({
     select: {
       public_id: true,
@@ -17,6 +26,7 @@ export const fetchOffers = async (query: string | null) => {
       description: true,
       position: true,
       salary: true,
+      city: true,
     },
     where: whereQuery,
   });

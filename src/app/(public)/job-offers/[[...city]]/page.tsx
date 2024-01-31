@@ -16,21 +16,21 @@ export const metadata: Metadata = {
 
 type Props = {
   params?: {
-    locale: string;
+    city?: string[];
   };
   searchParams: {
     query?: string;
   };
 };
 
-export default async function JobOffersPage({
-  // params: { locale },
-  searchParams,
-}: Props) {
+export default async function JobOffersPage({ params, searchParams }: Props) {
   // console.log({ searchParams });
   // setRequestLocale(locale);
 
+  console.log({ params });
+
   const query = searchParams.query || null;
+  const city = params?.city?.[0] || null;
 
   return (
     <div>
@@ -47,8 +47,8 @@ export default async function JobOffersPage({
 
       <SearchForm />
 
-      <Suspense key={query} fallback={<p>Loading offers...</p>}>
-        <OffersList query={query} />
+      <Suspense key={`${query}-${city}`} fallback={<p>Loading offers...</p>}>
+        <OffersList query={query} city={city} />
       </Suspense>
     </div>
   );
