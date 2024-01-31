@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const isClient = !!window;
+const isClient = typeof window !== "undefined";
 
 const getSize = () => ({
   x: isClient ? window.innerWidth : 0,
