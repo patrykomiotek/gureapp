@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nextjs-app-deployment
+spec:
+  replicas: 3 # Number of replicas (pods) to maintain
+  selector:
+    matchLabels:
+      app: nextjs-app
+  template:
+    metadata:
+      labels:
+        app: nextjs-app
+    spec:
+      containers:
+        - name: nextjs-app
+          image: nextjs-app # update tag when needed
+          ports:
+            - containerPort: 3000

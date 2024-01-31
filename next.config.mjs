@@ -4,7 +4,7 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: "export",
+  output: "standalone",
   // distDir: "./dist",
 
   // poweredByHeader: false,
