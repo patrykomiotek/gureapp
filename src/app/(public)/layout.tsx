@@ -1,3 +1,5 @@
+import { headers } from "next/headers";
+
 import { Toast, NavBar } from "@ui";
 
 type Props = {
@@ -8,6 +10,8 @@ type Props = {
 };
 
 export default function PublicLayout({ children, mobile, desktop }: Props) {
+  const headersList = headers();
+  const deviceHeader = headersList.get("x-device");
   return (
     <>
       <Toast />
@@ -17,8 +21,7 @@ export default function PublicLayout({ children, mobile, desktop }: Props) {
         </div>
       </div>
       <div className="mx-auto py-2">
-        {mobile}
-        {desktop}
+        {deviceHeader === "mobile" ? mobile : desktop}
         <div className="container mx-auto py-4">{children}</div>
       </div>
     </>
