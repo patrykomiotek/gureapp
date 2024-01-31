@@ -2,9 +2,11 @@ import { Toast, NavBar } from "@ui";
 
 type Props = {
   children: React.ReactNode;
+  mobile: React.ReactNode;
+  desktop: React.ReactNode;
 };
 
-export default function PublicLayout({ children }: Props) {
+export default function PublicLayout({ children, mobile, desktop }: Props) {
   return (
     <>
       <Toast />
@@ -15,6 +17,8 @@ export default function PublicLayout({ children }: Props) {
       </div>
       <div className="mx-auto py-2">
         <div className="container mx-auto py-4">{children}</div>
+        {mobile}
+        {desktop}
       </div>
     </>
   );
