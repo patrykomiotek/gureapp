@@ -44,6 +44,7 @@ export const SearchForm = () => {
           ref={searchFieldRef}
           label="Search"
           onChange={handleChange}
+          // defaultValue={searchParams.get("query").toString() || ''}
           defaultValue={searchParams.get("query")?.toString()}
         />
       </form>
