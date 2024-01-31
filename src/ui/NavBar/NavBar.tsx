@@ -1,10 +1,14 @@
 import { lusitana } from "../fonts";
 import { NavLink } from "../NavLink/NavLink";
+import { CustomerName } from "./CustomerName";
 
 export const NavBar = () => {
   return (
     <nav className={`container ${lusitana.className}`}>
       <ul className="flex">
+        <li className="mr-4">
+          <CustomerName />
+        </li>
         <li className="mr-4">
           <NavLink href="/">Home</NavLink>
         </li>

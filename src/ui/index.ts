@@ -8,6 +8,7 @@ export * from "./Text";
 export * from "./Textarea";
 export * from "./Toast";
 export * from "./ViewPort";
+export * from "./Theme";
 export * from "./utils/cn";
 export * from "./fonts";
 export * from "./hooks";
