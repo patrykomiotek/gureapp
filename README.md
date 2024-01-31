@@ -22,13 +22,23 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Using Playwright
 
+To initialize for the first time:
+
 `npm init playwright`
+
+To tun tests:
 
 `npx playwright test`
 
+To show reports after above command:
+
 `npx playwright show-report`
 
+To run tests with interactive ui:
+
 `npx playwright test --ui`
+
+To use codegen tool:
 
 `npx playwright codegen`
 
