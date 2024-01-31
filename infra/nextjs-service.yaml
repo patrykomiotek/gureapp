@@ -7,6 +7,6 @@ spec:
     app: nextjs-app
   ports:
     - protocol: TCP
-      port: 80
+      port: 8081 # only for dev
       targetPort: 3000
   type: LoadBalancer
