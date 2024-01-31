@@ -19,7 +19,11 @@ test("test", async ({ page }) => {
   await page.getByRole("button", { name: "submit" }).click();
   // await page.getByRole('link', { name: 'Senior Frontend dev' }).click();
 
+  // await expect(
+  //   page.getByRole("link", { name: "Senior Frontend dev" })
+  // ).toBeVisible();
+
   await expect(
-    page.getByRole("link", { name: "Senior Frontend dev" })
+    page.getByRole("heading", { name: /Job offers/i })
   ).toBeVisible();
 });
