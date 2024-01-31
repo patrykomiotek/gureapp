@@ -14,7 +14,25 @@ const nextConfig = {
   },
 
   // rewrites: /new-about -> /about
-  // redirect: /about -> /new-about
+  async rewrites() {
+    return [
+      {
+        source: "/new-about",
+        destination: "/about",
+      },
+    ];
+  },
+
+  // redirect: /new-contact -> /contact
+  async redirects() {
+    return [
+      {
+        source: "/new-contact",
+        destination: "/contact",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 // with next-intl
