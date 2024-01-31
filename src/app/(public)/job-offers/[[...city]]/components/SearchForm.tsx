@@ -35,6 +35,7 @@ export const SearchForm = () => {
       console.log(`${pathName}?${params.toString()}`);
       // setTransition(() => replace(`${pathName}?${params.toString()}`));
       replace(`${pathName}?${params.toString()}`);
+      // router.push(`/job-offers/${city}?${params.toString()}`); (for HTML select)
     }, 400);
 
   return (

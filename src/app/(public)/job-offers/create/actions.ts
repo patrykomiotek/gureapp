@@ -17,6 +17,7 @@ export const createJobOffer = async (formData: FormData) => {
     employer: formData.get("employer") as string,
     salary: parseInt(formData.get("salary") as string),
     position: formData.get("position") as string,
+    city: "krakow",
   };
   // console.log({ jobOffer });
 
