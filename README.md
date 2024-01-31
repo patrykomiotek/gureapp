@@ -45,8 +45,9 @@ To use codegen tool:
 ## Using Docker
 
 1. [Install Docker](https://docs.docker.com/get-docker/) on your machine.
-1. Build your container: `docker build -t nextjs-app .`.
-1. Run your container: `docker run -p 3000:3000 nextjs-app`.
+1. Build your container: `docker build -t your-username/nextjs-app:latest .`.
+1. Push to registry: `docker push your-username/nextjs-app:latest`
+1. Run your container: `docker run -p 3000:3000 your-username/nextjs-app`.
 
 Tip to pass env variables use `--build-arg` option eg.: `docker build -t nextjs-app --build-arg database-url=DSN .`
 
@@ -59,7 +60,7 @@ You can change directory to infra or operate from root directory
 To apply deployment run:
 
 ```bash
-kubectl apply -f nextjs-deployment.yaml
+kubectl apply -f ./infra/deployment.yaml
 ```
 
 This command instructs Kubernetes to create and manage the deployment based on the configuration in the YAML file.
@@ -69,18 +70,18 @@ This command instructs Kubernetes to create and manage the deployment based on t
 To make our app accessible from outside the cluster, we need to expose it using a Kubernetes Service. Apply service configuration by command:
 
 ```bash
-kubectl apply -f nextjs-service.yaml
+kubectl apply -f ./infra/service.yaml
 ```
 
 ### Accessing the App
 
 ```bash
-kubectl get services nextjs-app-service
+kubectl get services nextjs-service
 ```
 
 ### Scaling and updating
 
-To scale your app, you can simply adjust the replicas field in the deployment configuration (nextjs-deployment.yaml). For instance, to scale up to 5 replicas:
+To scale your app, you can simply adjust the replicas field in the deployment configuration (`deployment.yaml`). For instance, to scale up to 5 replicas:
 
 ```yaml
 spec:
@@ -90,12 +91,12 @@ spec:
 Apply the updated configuration with:
 
 ```bash
-kubectl apply -f nextjs-deployment.yaml
+kubectl apply -f ./infra/deployment.yaml
 ```
 
 ### Updating the App
 
-When you need to update your app, make changes to your code and build a new Docker image. Then, update the image tag in the deployment configuration (`nextjs-deployment.yaml`):
+When you need to update your app, make changes to your code and build a new Docker image. Then, update the image tag in the deployment configuration (`deployment.yaml`):
 
 ```yaml
 spec:
@@ -109,7 +110,7 @@ spec:
 Apply the updated configuration to apply the changes:
 
 ```bash
-kubectl apply -f nextjs-deployment.yaml
+kubectl apply -f ./infra/deployment.yaml
 ```
 
 ### In existing projects

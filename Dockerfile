@@ -11,15 +11,17 @@ COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 
 RUN apk add --update --no-cache python3 build-base gcc && ln -sf /usr/bin/python3 /usr/bin/python
 
-# RUN npm ci
-RUN \
-  if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
-  elif [ -f package-lock.json ]; then npm ci; \
-  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i; \
-  # Allow install without lockfile, so example works even without Node.js installed locally
-  else echo "Warning: Lockfile not found. It is recommended to commit lockfiles to version control." && yarn install; \
-  fi
+RUN npm ci
+# RUN \
+#   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
+#   elif [ -f package-lock.json ]; then npm ci; \
+#   elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i; \
+#   # Allow install without lockfile, so example works even without Node.js installed locally
+#   else echo "Warning: Lockfile not found. It is recommended to commit lockfiles to version control." && yarn install; \
+#   fi
 
+# npx prisma migrate deploy (before in the pipeline)
+# npx prisma generate
 
 # Rebuild the source code only when needed
 FROM base AS builder
