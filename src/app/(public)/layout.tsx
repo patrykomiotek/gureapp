@@ -24,7 +24,9 @@ export default function PublicLayout({ children, mobile, desktop }: Props) {
         </div>
       </div>
       <div className="mx-auto py-2">
-        {deviceHeader === "mobile" ? mobile : desktop}
+        <div className="container mx-auto py-4">
+          {deviceHeader === "mobile" ? mobile : desktop}
+        </div>
         <div className="container mx-auto py-4">{children}</div>
       </div>
     </ThemeContextProvider>

@@ -23,6 +23,8 @@ type Props = {
   };
 };
 
+// export const revalidate = 3600;
+
 export default async function JobOffersPage({ params, searchParams }: Props) {
   // console.log({ searchParams });
   // setRequestLocale(locale);
